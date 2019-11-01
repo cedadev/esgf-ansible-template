@@ -1,0 +1,20 @@
+- name: Install data nodes
+  hosts: data
+  connection: paramiko
+  become: yes
+  roles:
+    - esgf_roles/install_data_node
+
+- name: Install idp nodes
+  hosts: idp
+  connection: paramiko
+  become: yes
+  roles:
+    - esgf_roles/install_idp_node
+
+- name: Install index nodes
+  hosts: index
+  connection: paramiko
+  become: yes
+  roles:
+    - esgf_roles/install_index_node
